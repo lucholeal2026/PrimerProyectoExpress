@@ -53,4 +53,39 @@
   warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
   warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
 
-  
+-- Podemos ver que archivos se van a subir
+  git status
+
+-- Guardamos los cambios de forma local con un mensaje descriptivo:
+  git commit -m "Primer commit: Proyecto Express-Creación de metodos y mocks "
+
+
+-- Crear el repositorio en GitHub y conectarlo
+  En GitHub e iniciar sesión con tu nuevo usuario.
+  Crea un nuevo repositorio (botón New arriba a la derecha).
+
+  Ponerle un nombre al repositorio. No marcar la casilla de añadir un archivo README, .gitignore o licencia (ya que los tienes configurados localmente). Haz clic en Create repository.
+
+  GitHub mostrará una serie de comandos. Copia los que corresponden a "Push an existing repository from the command line". Son estos dos (reemplaza la URL por la de tu repositorio):
+
+  # Vincular tu repositorio local con el remoto en GitHub
+  git branch -M main
+  git remote add origin https://github.com/tu-nuevo-usuario/nombre-de-tu-repo.git
+
+  # Subir tu código a GitHub
+  git push -u origin main
+
+
+-- Ahora nos vamos a render:
+  https://render.com/
+
+  -nos logueamos con la cuenta de github
+  -una vez logueado me voy a web services
+  -elijo github
+  -Elijo la opción para seleccionar el repositorio que quiero subir
+  -Elijo el repositorio y toco install
+  -dejamos las configuraciones por defecto.
+    En caso de estar el index.mjs dentro de una carpeta tendremos que ponerlo en: Root Directory
+  -En Start Command ponemos node index.js o si tenemos configurado el comando start en nuestro script se lo agregamos: npm start
+  -elejimos el plan free
+  -posteriormente elegimos el boton deploy web service

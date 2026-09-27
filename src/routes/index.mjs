@@ -5,7 +5,7 @@ import materiasRoutes from "./materias.routes.mjs"
 
 const router = Router()
 
-router.use('/nuevo', usersRouter);
+router.use('/', usersRouter);
 router.use(materiasRoutes);
 
 export default router;
