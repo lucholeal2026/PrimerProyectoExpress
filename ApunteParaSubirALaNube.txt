@@ -1,0 +1,56 @@
+--En la raiz del proyecto creamos archivo .gitignore
+  # Dependencias
+  node_modules/
+
+  # Variables de entorno y secretos
+  .env
+
+  # Logs y archivos del sistema operativo
+  logs/
+  *.log
+  npm-debug.log*
+  .DS_Store
+  Thumbs.db
+
+  # Directorios de compilación o temporales (si aplica)
+  dist/
+  build/
+
+--inicializo mi proyecto
+  git init
+
+-- agrego usuario y cuenta solo a mi proyecto (esto es cuando trabajamos con mas de una cuenta)
+  git config user.name "Luis Leal"
+  git config user.email "lucholeal2026@gmail.com"
+
+--Verificar el index.mjs (que tome el puerto desde la variable de entorno)
+    import express from "express";
+    import routes from "./routes/index.mjs"
+
+    const app = express();
+    const PORT = process.env.PORT || 3000;
+
+    app.use(express.json());
+    app.use(routes);
+
+    const loggingMiddleware = (request, response, next) => {
+      console.log(`${request.method} - ${request.url}`);
+      next();
+    };
+
+    app.listen(PORT, () => {
+      console.log(`Running on Port ${PORT}`)
+    })
+
+-- Agregamos todos los archivos al control de versiones
+  # 1. Asegurar que Git está inicializado (si no lo estaba)
+  git init
+
+  # 2. Agregar todos los archivos al control de versiones (el .gitignore omitirá node_modules automáticamente)
+  git add .
+
+  -Si aparece:
+  warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+  warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+
+  
